@@ -230,26 +230,28 @@
         sub_chart.style.display = "block"
 
 
-    })
+     })
     sub_chart.addEventListener("mouseout", function(event){
         sub_chart.style.display = "none"
 
     })
-    chart_ul_sub.addEventListener("mouseover", function(event){
-        event.target.style.color = "#1890ff"
-    })
-    chart_ul_sub.addEventListener("mouseout", function(event){
-        event.target.style.color = "black"
-    })
+    // chart_ul_sub.addEventListener("mouseover", function(event){
+    //     event.target.style.color = "#1890ff"
+    // })
+    // chart_ul_sub.addEventListener("mouseout", function(event){
+    //     event.target.style.color = "black"
+    // })
 
-    hover_ul_new.addEventListener("mouseover", function(event){
-        event.target.style.color = "#1890ff"
-    })
-    hover_ul_new.addEventListener("mouseout", function (event) {
-        event.target.style.color = ""
-    })
+    // hover_ul_new.addEventListener("mouseover", function(event){
+    //     event.target.style.color = "#1890ff"
+    // })
+    // hover_ul_new.addEventListener("mouseout", function (event) {
+    //     event.target.style.color = ""
+    // })
     // darkmode
-
+    function hover_dart_mode(){
+      
+  }
     function dark_mode(){
 
         let logo = document.querySelector('.logo')
@@ -265,17 +267,22 @@
 
         if( (darkmode.checked == true) && (new_content.style.display === "none") ){
             side_bar.style.backgroundColor = "black"
-            hover_ul.style.color = "#ffffff9c"
+            
 
             logo.style.backgroundColor = "black"
             logo.style.width = "17.2%"
-
+            function hover_dart_mode (){
+                let list_item = document.getElementsByClassName('list-item')
+                for (let i=0;i<list_item.length;i++){
+                    list_item[i].removeAttribute("style")
+                    hover_ul.style.color = "#ffffff9c"
+                }
+            }
             hover_ul.addEventListener("mouseover",function(event){
                 event.target.style.color = "white"
             },false)
-            hover_ul.addEventListener("mouseout",function(event){
-                event.target.style.color = ""
-            },false)
+            hover_ul.addEventListener("mouseout",hover_dart_mode,false)
+            hover_ul.style.color = "#ffffff9c"
             show.style.backgroundColor = "black"
             show.style.top = "70px"
             show.style.left = "0px"
@@ -299,19 +306,13 @@
                 sub_chart.style.display = "none"
 
             })
-            chart_ul_sub.addEventListener("mouseover", function(event){
-                event.target.style.color = "white"
-            })
-            chart_ul_sub.addEventListener("mouseout", function(event){
-                event.target.style.color = "#ffffff9c"
-            })
-            hover_ul_new.addEventListener("mouseover",function(event){
-                event.target.style.color = "white"
-            },false)
-            hover_ul_new.addEventListener("mouseout",function(event){
-                event.target.style.color = ""
-            },false)
-
+            // chart_ul_sub.addEventListener("mouseover", function(event){
+            //     event.target.style.color = "white"
+            // })
+            // chart_ul_sub.addEventListener("mouseout", function(event){
+            //     event.target.style.color = "#ffffff9c"
+            // })
+            
 
         } else if( (darkmode.checked == true) && (new_content.style.display === "block") ){
             // logo.style.width = "6.2%"
@@ -331,29 +332,38 @@
 
 
 
-        }else{
+        }else if((dark_mode.checked == false) && (new_content.style.display === "none")){
+            // hover_ul_new.addEventListener("mouseover",function(event){
+            //     event.target.style.color = "white"
+            // },false)
+            // hover_ul_new.addEventListener("mouseout",function(event){
+            //     event.target.style.color = ""
+            // },false)
+           
+            // hover_ul.addEventListener("mouseover",function(event){
+            //     event.target.style.color = "#1890ff"
+            // },false)
+            // hover_ul.addEventListener("mouseout",function(event){
+            //     event.target.style.color = ""
+            // },false)
+           
+
+        }
+        else{
             side_bar.style.backgroundColor = "white"
             new_content.style.backgroundColor = "white"
             new_list_content_li.style.color = "black"
             hover_ul.style.color = "black"
-            for (let i ; i< list_item.length;i++){
-                list_item[i].style.color = "black"
-            }
-            hover_ul_new.style.color = "black"
-            hover_ul.addEventListener("mouseover",function(event){
-                event.target.style.color = "#1890ff"
-            },false)
-            hover_ul.addEventListener("mouseout",function(event){
-                event.target.style.color = ""
-            },false)
             logo.style.backgroundColor = "white"
-
-
-        }
-
+            
+            hover_ul_new.style.color = "black"
+        
 
     }
 
+    
+    }
+ 
 
 </script>
 
