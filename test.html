@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="top">
+        <div class="logo">
+            <div class="img-logo">
+                <img id="logo-svg" src="img/logo.svg" alt="">
+            </div>
+            <div class="text-logo">
+                <p>ANTD ADMINS</p>
+            </div>
+
+        </div>
+        <div class="icon active_icon" onclick="new_side_bar(true)">
+            <i class="fa fa-outdent"></i>
+        </div>
+    </div>
+    <div class="content ">
+        <div class="side-bar">
+
+
+            <div class="list">
+                <ul class="hover-ul">
+                    <li class="list-item active" >
+                       <div class="item">
+                           <span class="iconify icon_sb" data-icon="ant-design:dashboard-outlined"></span>&nbsp;&nbsp;<p class="text-menu">Dashboard</p>
+                       </div>
+
+                    </li>
+                    <li class="list-item  " >
+                       <div class="item">
+                           <span class="iconify icon_sb" data-icon="bxs:user"></span>&nbsp;&nbsp;<p class="text-menu">Users</p>
+                       </div>
+                    </li>
+                    <li class="list-item" >
+                        <div class="item">
+                            <span class="iconify icon_sb" data-icon="ant-design:shopping-cart-outlined"></span>&nbsp;&nbsp;<p class="text-menu">Posts</p>
+                        </div>
+                    </li>
+                    <li class="list-item" >
+                       <div class="item">
+                           <span class="iconify icon_sb" data-icon="ant-design:line-chart-outlined"></span>&nbsp;&nbsp;<p class="text-menu">Charts</p>
+                           <span class="iconify no_day_nay" onclick="dropdown()"  data-icon="ant-design:down-outlined"></span>
+                       </div>
+                    </li>
+                    <div class="sub-list-1">
+                        <ul>
+                            <li class="new-list-1" >
+                                          <div class="sub-containor ">
+                                              <div id="level-2">
+                                                   <span ><span class="iconify" data-icon="ant-design:line-outlined"
+                                                                data-width="20"
+                                                                data-height="20"></span>&nbsp;Echart &nbsp;&nbsp;&emsp;&emsp;<span class="iconify menu-level-3" onclick="show_hide_ml_3()" data-icon="ant-design:down-outlined"></span></span>
+                                              </div>
+                                              <div class="sub-list-2">
+                                                  <ul>
+                                                      <li class="sl-new-list-3">
+                                                       <div class="sub-li">
+                                                            <span><span class="iconify" data-icon="ant-design:line-outlined"
+                                                                        data-width="20"
+                                                                        data-height="20"></span>&nbsp;Echart</span>
+                                                       </div>
+                                                      </li>
+                                                      <li class="sl-new-list-3">
+                                                        <div class="sub-li">
+                                                             <span><span class="iconify" data-icon="ant-design:bar-chart-outlined"
+                                                                         data-width="20"
+                                                                         data-height="20"></span>&nbsp;HighCharts</span>
+                                                        </div>
+                                                      </li>
+                                                      <li class="sl-new-list-3">
+                                                        <div class="sub-li">
+                                                               <span><span class="iconify" data-icon="ant-design:area-chart-outlined"
+                                                                           data-width="20"
+                                                                           data-height="20"></span>&nbsp;Rechartst</span>
+                                                        </div>
+                                                      </li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                            </li>
+
+                            <li class="new-list-2">
+                                          <div class="sub-containor-level-2">
+                                               <span><span class="iconify" data-icon="ant-design:bar-chart-outlined"
+                                                           data-width="20"
+                                                           data-height="20"></span>&nbsp;HighCharts</span>
+                                          </div>
+                            </li>
+                            <li class="new-list-3 child">
+                                         <div class="sub-containor-level-2">
+                                               <span><span class="iconify" data-icon="ant-design:area-chart-outlined"
+                                                           data-width="20"
+                                                           data-height="20"></span>&nbsp;Rechartst</span>
+                                         </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </ul>
+                <div class="btn-toggle">
+                    <label class="switch">
+                        <input id="btn-dark" type="checkbox" onclick="dark_mode()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="center"></div>
+    </div>
+</div>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script>
+    let darkmode = document.getElementById('btn-dark')
+    let side_bar = document.querySelector('.side-bar')
+    let logo = document.querySelector('.logo')
+    let sub_list_1 = document.querySelector('.sub-list-1')
+    let menu_level_3 = document.querySelector('.menu-level-3')
+    let new_list_2 = document.querySelector('.new-list-2')
+    let new_list_3 = document.querySelector('.new-list-3')
+    let sub_list_2 = document.querySelector('.sub-list-2')
+    let list_item = document.getElementsByClassName('list-item')
+    let icon = document.querySelector('.icon')
+    let img_logo = document.querySelector('.img-logo')
+    let icon_sb = document.getElementsByClassName('icon_sb')
+    let text_logo = document.querySelector('.text-logo')
+    let text_menu = document.getElementsByClassName('text-menu')
+    let submenu = document.querySelector('.no_day_nay')
+
+    function dark_mode() {
+        if (darkmode.checked == true) {
+            side_bar.classList.add('darkmode')
+            logo.classList.add('logodark')
+        } else {
+            side_bar.classList.remove('darkmode')
+            logo.classList.remove('logodark')
+        }
+    }
+    function dropdown(){
+        sub_list_1.classList.toggle('show')
+    //     if (sub_list_1.style.opacity == 0){
+    //         sub_list_2.classList.add('hide')
+    //     }else if ((sub_list_1.style.opacity == 1) && (menu_level_3.style.opacity == "0")){
+    //         sub_list_2.classList.add('hide')
+    //     }
+    //
+    }
+
+    function show_hide_ml_3(){
+        new_list_2.classList.toggle('ml-3-new-list-2')
+        new_list_3.classList.toggle('ml-3-new-list-3')
+        sub_list_2.classList.toggle('ml-3-sub-list-2')
+    }
+
+      for (let i=0; i<list_item.length;i++){
+          list_item[i].addEventListener("click", function (){
+              let current = document.getElementsByClassName("active")
+              current[0].className = current[0].className.replace(" active", "")
+              this.className += " active"
+          })
+
+    }
+    var  check = false
+    function new_side_bar(){
+
+        if (check == true) {
+
+            text_logo.classList.add('newsb-text-logo')
+            img_logo.classList.add('newsb-img-logo')
+            side_bar.classList.add('newsb-side-bar')
+            for (let i = 0; i < text_menu.length; i++) {
+                text_menu[i].classList.add('newsb-text-menu')
+            }
+            for (let i = 0; i < list_item.length; i++) {
+                list_item[i].classList.add('newsb-list-item')
+            }
+            for (let i = 0; i < icon_sb.length; i++) {
+                icon_sb[i].classList.add('newsb-iconify')
+            }
+            submenu.classList.add('hide-sub-menu')
+            check = false
+        } else {
+
+            text_logo.classList.remove('newsb-text-logo')
+            img_logo.classList.remove('newsb-img-logo')
+            side_bar.classList.remove('newsb-side-bar')
+            for (let i = 0; i < text_menu.length; i++) {
+                text_menu[i].classList.remove('newsb-text-menu')
+            }
+            for (let i = 0; i < list_item.length; i++) {
+                list_item[i].classList.remove('newsb-list-item')
+            }
+            for (let i = 0; i < icon_sb.length; i++) {
+                icon_sb[i].classList.remove('newsb-iconify')
+            }
+            submenu.classList.remove('hide-sub-menu')
+            check = true
+        }
+
+
+    }
+
+</script>
+
+</body>
+</html>
