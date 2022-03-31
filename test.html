@@ -14,14 +14,14 @@
     <div class="top">
         <div class="logo">
             <div class="img-logo">
-                <img id="logo-svg" src="img/logo.svg" alt="">
+                <img class="logo-svg" src="img/logo.svg" alt="">
             </div>
             <div class="text-logo">
                 <p>ANTD ADMINS</p>
             </div>
 
         </div>
-        <div class="icon active_icon" onclick="new_side_bar(true)">
+        <div class="icon active_icon" onclick="new_side_bar()">
             <i class="fa fa-outdent"></i>
         </div>
     </div>
@@ -32,28 +32,30 @@
             <div class="list">
                 <ul class="hover-ul">
                     <li class="list-item active" >
-                       <div class="item">
+                       <div class="item">&emsp;
                            <span class="iconify icon_sb" data-icon="ant-design:dashboard-outlined"></span>&nbsp;&nbsp;<p class="text-menu">Dashboard</p>
                        </div>
 
                     </li>
                     <li class="list-item  " >
-                       <div class="item">
+                       <div class="item">&emsp;
                            <span class="iconify icon_sb" data-icon="bxs:user"></span>&nbsp;&nbsp;<p class="text-menu">Users</p>
                        </div>
                     </li>
                     <li class="list-item" >
-                        <div class="item">
+                        <div class="item">&emsp;
                             <span class="iconify icon_sb" data-icon="ant-design:shopping-cart-outlined"></span>&nbsp;&nbsp;<p class="text-menu">Posts</p>
                         </div>
                     </li>
-                    <li class="list-item" >
-                       <div class="item">
+                    <li class="list-item child " >
+                       <div class="item">&emsp;
                            <span class="iconify icon_sb" data-icon="ant-design:line-chart-outlined"></span>&nbsp;&nbsp;<p class="text-menu">Charts</p>
-                           <span class="iconify no_day_nay" onclick="dropdown()"  data-icon="ant-design:down-outlined"></span>
+                          <div id="no_day_nay">
+                              <span class="iconify"  onclick="dropdown()"  data-icon="ant-design:down-outlined"></span>
+                          </div>
                        </div>
                     </li>
-                    <div class="sub-list-1">
+                    <div class="sub-list-1" id="emty">
                         <ul>
                             <li class="new-list-1" >
                                           <div class="sub-containor ">
@@ -97,7 +99,7 @@
                                                            data-height="20"></span>&nbsp;HighCharts</span>
                                           </div>
                             </li>
-                            <li class="new-list-3 child">
+                            <li class="new-list-3">
                                          <div class="sub-containor-level-2">
                                                <span><span class="iconify" data-icon="ant-design:area-chart-outlined"
                                                            data-width="20"
@@ -106,7 +108,6 @@
                             </li>
                         </ul>
                     </div>
-
 
                 </ul>
                 <div class="btn-toggle">
@@ -118,34 +119,77 @@
             </div>
 
         </div>
-        <div class="center"></div>
+        <div class="center">
+
+        </div>
     </div>
 </div>
 <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 <script>
-    let darkmode = document.getElementById('btn-dark')
-    let side_bar = document.querySelector('.side-bar')
-    let logo = document.querySelector('.logo')
-    let sub_list_1 = document.querySelector('.sub-list-1')
-    let menu_level_3 = document.querySelector('.menu-level-3')
-    let new_list_2 = document.querySelector('.new-list-2')
-    let new_list_3 = document.querySelector('.new-list-3')
-    let sub_list_2 = document.querySelector('.sub-list-2')
-    let list_item = document.getElementsByClassName('list-item')
-    let icon = document.querySelector('.icon')
-    let img_logo = document.querySelector('.img-logo')
-    let icon_sb = document.getElementsByClassName('icon_sb')
-    let text_logo = document.querySelector('.text-logo')
-    let text_menu = document.getElementsByClassName('text-menu')
-    let submenu = document.querySelector('.no_day_nay')
+    var darkmode = document.getElementById('btn-dark')
+    var side_bar = document.querySelector('.side-bar')
+    var logo = document.querySelector('.logo')
+    var sub_list_1 = document.querySelector('.sub-list-1')
+    var menu_level_3 = document.querySelector('.menu-level-3')
+    var new_list_2 = document.querySelector('.new-list-2')
+    var new_list_3 = document.querySelector('.new-list-3')
+    var sub_list_2 = document.querySelector('.sub-list-2')
+    var list_item = document.getElementsByClassName('list-item')
+    var icon = document.querySelector('.icon')
+    var img_logo = document.querySelector('.img-logo')
+    var icon_sb = document.getElementsByClassName('icon_sb')
+    var text_logo = document.querySelector('.text-logo')
+    var text_menu = document.getElementsByClassName('text-menu')
+    var tat_di = document.getElementById('no_day_nay')
+    var hide_btn_toogle = document.querySelector('.btn-toggle')
+    var list = document.querySelector('.list')
+    var sub_list_3 = document.querySelector('.sub-list-3')
+    var child = document.querySelector('.child')
+    var logo_svg = document.querySelector('.logo-svg')
+    var den = document.querySelector('.den')
+    var emty = document.getElementById('emty')
+    var  check = false
 
     function dark_mode() {
         if (darkmode.checked == true) {
+            logo_svg.classList.add('img-dark')
+            icon.classList.add('icon-dark')
             side_bar.classList.add('darkmode')
             logo.classList.add('logodark')
+            sub_list_3.classList.add('dark-sub-list-3')
+            den.classList.add('black')
+            // logo.classList.add('logo-darkmode')
+            // img_logo.classList.add('logo-img-darkmode')
+            for (let i=0; i<list_item.length;i++){
+                list_item[i].classList.remove('active')
+                list_item[0].classList.add('new-active')
+                list_item[i].addEventListener("click", function (){
+                    let current = document.getElementsByClassName("new-active")
+                    current[0].className = current[0].className.replace(" new-active", "")
+                    this.className += " new-active"
+                })
+
+            }
+
         } else {
+            den.classList.remove('black')
+            // logo_svg.classList.remove('img-dark')
+            // icon.classList.remove('icon-dark')
+            sub_list_3.classList.remove('dark-sub-list-3')
             side_bar.classList.remove('darkmode')
             logo.classList.remove('logodark')
+            // logo.classList.remove('logo-darkmode')
+            // img_logo.classList.remove('logo-img-darkmode')
+            for (let i=0; i<list_item.length;i++){
+                list_item[i].classList.remove('new-active')
+                list_item[0].classList.add('active')
+                list_item[i].addEventListener("click", function (){
+                    let current = document.getElementsByClassName("active")
+                    current[0].className = current[0].className.replace(" active", "")
+                    this.className += " active"
+                })
+
+            }
         }
     }
     function dropdown(){
@@ -164,22 +208,27 @@
         sub_list_2.classList.toggle('ml-3-sub-list-2')
     }
 
-      for (let i=0; i<list_item.length;i++){
-          list_item[i].addEventListener("click", function (){
-              let current = document.getElementsByClassName("active")
-              current[0].className = current[0].className.replace(" active", "")
-              this.className += " active"
-          })
 
-    }
-    var  check = false
+          for (let i=0; i<list_item.length;i++){
+              list_item[i].addEventListener("click", function (){
+                  let current = document.getElementsByClassName("active")
+                  current[0].className = current[0].className.replace(" active", "")
+                  this.className += " active"
+              })
+
+          }
+
+
     function new_side_bar(){
 
         if (check == true) {
 
+            tat_di.setAttribute("style","display: none;")
             text_logo.classList.add('newsb-text-logo')
             img_logo.classList.add('newsb-img-logo')
             side_bar.classList.add('newsb-side-bar')
+            icon.classList.add('new-icon')
+
             for (let i = 0; i < text_menu.length; i++) {
                 text_menu[i].classList.add('newsb-text-menu')
             }
@@ -189,10 +238,34 @@
             for (let i = 0; i < icon_sb.length; i++) {
                 icon_sb[i].classList.add('newsb-iconify')
             }
-            submenu.classList.add('hide-sub-menu')
+
+            hide_btn_toogle.classList.add('hide-btn-toogle')
+            list.classList.add('new-list')
+            if (darkmode.checked == true){
+                img_logo.classList.add('img-dark')
+                icon.classList.add('icon-dark')
+                logo.classList.add('logo-darkmode')
+                img_logo.classList.add('logo-img-darkmode')
+
+            }else{
+                img_logo.classList.remove('img-dark')
+                logo.classList.remove('logo-darkmode')
+                img_logo.classList.remove('logo-img-darkmode')
+                logo_svg.classList.remove('img-dark')
+                icon.classList.remove('icon-dark')
+            }
+
+
+
             check = false
         } else {
 
+            tat_di.setAttribute("style","display: block;")
+            img_logo.classList.remove('img-dark')
+            logo_svg.classList.remove('img-dark')
+            icon.classList.remove('icon-dark')
+            icon.classList.remove('new-icon')
+            list.classList.remove('new-list')
             text_logo.classList.remove('newsb-text-logo')
             img_logo.classList.remove('newsb-img-logo')
             side_bar.classList.remove('newsb-side-bar')
@@ -205,12 +278,42 @@
             for (let i = 0; i < icon_sb.length; i++) {
                 icon_sb[i].classList.remove('newsb-iconify')
             }
-            submenu.classList.remove('hide-sub-menu')
+            tat_di.classList.remove('hide-sub-menu')
+            hide_btn_toogle.classList.remove('hide-btn-toogle')
+            logo.classList.remove('logo-darkmode')
+            img_logo.classList.remove('logo-img-darkmode')
+
+
+            // sub_list_3.addEventListener("mouseover", newhover )
+            // sub_list_3.addEventListener("mouseout",stop_newhover)
+
             check = true
         }
 
 
     }
+    function hover_child (){
+        emty.classList.add("hover-sub-list-3")
+        emty.classList.add('abc')
+    }
+    function stop_child(){
+        emty.classList.remove("hover-sub-list-3")
+        emty.classList.add('abc')
+    }
+    function newhover (){
+        sub_list_1.classList.add("hover-sub-list-3")
+        sub_list_1.classList.add('abc')
+
+    }
+    function stop_newhover(){
+        sub_list_1.classList.remove("hover-sub-list-3")
+        sub_list_1.classList.add('abc')
+    }
+    if (tat_di.style.display === "none"){
+        child.addEventListener("mouseover", hover_child)
+        child.addEventListener("mouseout", stop_child)
+    }
+
 
 </script>
 

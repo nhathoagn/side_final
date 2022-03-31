@@ -1,18 +1,25 @@
 .container{
-    height: 846px;
+    height: 857px;
     width: 1778px;
+    position: relative;
+    right: 8px;
 }
 .top{
     display: flex;
+    position: relative;
+    bottom: 8px;
 }
 .hover-ul{
     padding-inline-start: 0px;
 }
 .side-bar{
-    width: 13%;
+    width: 16%;
     display: flex;
     background-color: white;
     color: black;
+    height: 102%;
+    position: relative;
+    bottom: 8px;
 }
 .content{
     display: flex;
@@ -41,6 +48,7 @@ button{
 .icon{
     position: relative;
     top: 16px;
+    left: 20px;
 }
 .logo{
     display: flex;
@@ -51,15 +59,16 @@ button{
 .img-logo{
     width: 34%;
 }
-.img-logo #logo-svg{
-    width: 46%;
+.img-logo .logo-svg{
+    width: 41%;
     position: relative;
-    left: 42%;
-    top: 7px;
+    left: 53%;
+    top: 12px;
 }
 /*Side-bar */
 .list{
     width: 100%;
+    /*margin-left: 13px;*/
 }
 .new-list-1{
     padding-bottom: 10px;
@@ -71,11 +80,15 @@ button{
 .center{
     width: 88%;
     box-shadow: inset 20px 19px 20px 11px rgb(0 0 0 / 11%);
-    height: 100%;
+    height: 102%;
 }
 
 /*.side-bar{*/
-
+#no_day_nay{
+    position: relative;
+    top: 21px;
+    left: 157px;
+}
 /*    box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.21);*/
 /*    height: 796px;*/
 /*    width: 16%;*/
@@ -189,20 +202,41 @@ input:checked + .slider:before {
 }
 .btn-toggle{
     position: relative;
-    left: 176px;
-    top: 286px;
+    left: 225px;
+    top: 437px;
 }
 /*Darkmode*/
+
 .darkmode {
     background-color: black;
     color: #ffffff8a;
 }
 .logodark{
     background-color: black;
-    width: 13.8%;
+    width: 16.5%;
     color: white;
 }
-.darkmode .list ul li:hover{
+.darkmode .item:hover{
+    color: white;
+}
+.logo-darkmode{
+    width: 5.4%;
+    height: 50px;
+}
+.logo-img-darkmode{
+    width: 87px;
+    right: 10px;
+    top: 3px;
+}
+.darkmode .sub-containor-level-2:hover{
+    color: white;
+}
+.darkmode .sub-list-1 .sub-list-2 .sub-li:hover{
+    color: white;
+}
+
+/*menu level 3*/
+.darkmode #level-2:hover{
     color: white;
 }
 /*menu level 2 */
@@ -213,7 +247,7 @@ input:checked + .slider:before {
 .show{
     opacity: 1;
 }
-.
+
 .hide{
     opacity: 0;
 }
@@ -248,15 +282,21 @@ input:checked + .slider:before {
     background-color: rgb(20 142 255 / 17%);
     border-right: 2px solid dodgerblue;
 }
+.new-active{
+    color: #ffffff;
+    background-color: rgb(20 142 255 / 17%);
+    border-right: 2px solid dodgerblue;
+}
 /*new menu*/
 .newsb-text-logo{
     display: none;
 }
 .newsb-img-logo{
     position: relative;
-    right: 30px;
+    right: 21px;
     bottom: 8px;
-    width: 67%;
+    width: 64%;
+    /*left: 3px;*/
 }
 .newsb-side-bar{
     width: 5%;
@@ -281,5 +321,64 @@ input:checked + .slider:before {
     width: 100%;
 }
 .hide-sub-menu{
+  display: none;
+}
+.hide-btn-toogle{
     display: none;
+}
+.new-list{
+    width: 100%;
+    margin-left: 1px;
+}
+.new-icon{
+    position: relative;
+    /*right: 28px;*/
+    left: -45px;
+}
+/*sub-list-3*/
+.sl-new-list-4{
+    list-style-type: none;
+}
+.sub-list-3{
+    position: relative;
+    top: 209px;
+    display: none;
+    background-color: white;
+    border: 1px solid white;
+    width: 166px;
+    color: black;
+}
+.dark-sub-list-3{
+    background-color: black;
+    color: rgba(255, 255, 255, 0.66);
+}
+.dark-sub-list-3 ul li:hover{
+    color: white;
+}
+
+.sub-list-3 .den ul li:hover{
+    color: #1890ff;
+}
+.black{}
+.emty{}
+.dark-sub-list-3 .black ul li:hover{
+    color: white;
+}
+/*dark*/
+.img-dark{
+    left: 6px;
+}
+.icon-dark{
+    left: 18px;
+}
+.abc{
+    width: 173px;
+    position: relative;
+    left: 95px;
+    bottom: 60px;
+    background-color: white;
+}
+/*hover */
+.hover-sub-list-3{
+    opacity: 1;
 }
