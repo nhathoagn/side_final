@@ -21,7 +21,7 @@
             </div>
 
         </div>
-        <div class="icon active_icon" onclick="new_side_bar(true)">
+        <div class="icon active_icon" onclick="new_side_bar()">
             <i class="fa fa-outdent"></i>
         </div>
     </div>
@@ -189,7 +189,7 @@
     var list_3 = document.querySelector('.list-3')
     var emty = document.getElementById('emty')
     var btn_toogle = document.querySelector('.btn-toggle')
-    var check = false
+
     emty.classList.remove("darkmode-hover-list-3")
     function dark_mode() {
         if (darkmode.checked === true) {
@@ -268,7 +268,7 @@
 
 
     function new_side_bar() {
-        if (check == true) {
+        if (list_3.className == 'list-3') {
             list_3.classList.add('show-list-3')
             icon_down.setAttribute("style", "display: none;")
             text_logo.classList.add('newsb-text-logo')
