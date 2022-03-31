@@ -21,7 +21,7 @@
             </div>
 
         </div>
-        <div class="icon active_icon" onclick="new_side_bar()">
+        <div class="icon active_icon" onclick="new_side_bar(true)">
             <i class="fa fa-outdent"></i>
         </div>
     </div>
@@ -51,16 +51,18 @@
                                     class="text-menu">Posts</p>
                         </div>
                     </li>
-                    <li class="list-item  list-3 " id="sidebar">
-                        <div class="item">&emsp;
+                    <li class="list-item  " >
+                        <div class="item  ">&emsp;
                             <span class="iconify icon_sb" data-icon="ant-design:line-chart-outlined"></span>&nbsp;&nbsp;<p
                                     class="text-menu">Charts</p>
                             <div id="icon-down">
-                                <span class="iconify" onclick="dropdown()" data-icon="ant-design:down-outlined"></span>
+                                <span class="iconify " onclick="dropdown()" data-icon="ant-design:down-outlined"></span>
                             </div>
+
                         </div>
                     </li>
-                    <div class="sub-list-1" id="emty">
+
+                    <div class="sub-list-1" >
                         <ul>
                             <li class="new-list-1">
                                 <div class="sub-containor ">
@@ -120,6 +122,7 @@
                     </div>
 
                 </ul>
+
                 <div class="btn-toggle">
                     <label class="switch">
                         <input id="btn-dark" type="checkbox" onclick="dark_mode()">
@@ -129,9 +132,10 @@
             </div>
 
         </div>
+
         <div class="center">
             <div class="sub-list-3">
-                <ul class="den">
+                <ul class="darkmode-hover-list-3 hover-list-3" id="emty">
                     <li class="sl-new-list-4">
                         <div class="den-sub-li">
                             <span><span class="iconify" data-icon="ant-design:line-outlined"
@@ -159,6 +163,7 @@
             </div>
         </div>
     </div>
+    <div class="list-3" id="sidebar" ></div>
 </div>
 <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 <script>
@@ -182,15 +187,19 @@
     var list = document.querySelector('.list')
     var logo_svg = document.querySelector('.logo-svg')
     var list_3 = document.querySelector('.list-3')
-    var sidebar = document.getElementById('sidebar')
+    var emty = document.getElementById('emty')
+    var btn_toogle = document.querySelector('.btn-toggle')
     var check = false
-
+    emty.classList.remove("darkmode-hover-list-3")
     function dark_mode() {
         if (darkmode.checked === true) {
+            sub_list_3.classList.add('darkmode')
             logo_svg.classList.add('img-dark')
             icon.classList.add('icon-dark')
             side_bar.classList.add('darkmode')
             logo.classList.add('logodark')
+            emty.classList.add("darkmode-hover-list-3")
+            emty.classList.remove('hover-list-3')
             // sub_list_3.classList.add('dark-sub-list-3')
             // den.classList.add('black')
             // logo.classList.add('logo-darkmode')
@@ -207,7 +216,9 @@
             }
 
         } else {
+            emty.classList.add("hover-list-3")
 
+            sub_list_3.classList.remove('darkmode')
             // logo_svg.classList.remove('img-dark')
             // icon.classList.remove('icon-dark')
             // sub_list_3.classList.remove('dark-sub-list-3')
@@ -240,6 +251,7 @@
 
     function show_hide_ml_3() {
         new_list_2.classList.toggle('ml-3-new-list-2')
+        btn_toogle.classList.toggle('new-btn-toggle')
         new_list_3.classList.toggle('ml-3-new-list-3')
         sub_list_2.classList.toggle('ml-3-sub-list-2')
     }
@@ -256,9 +268,8 @@
 
 
     function new_side_bar() {
-
         if (check == true) {
-
+            list_3.classList.add('show-list-3')
             icon_down.setAttribute("style", "display: none;")
             text_logo.classList.add('newsb-text-logo')
             img_logo.classList.add('newsb-img-logo')
@@ -290,25 +301,29 @@
                 logo_svg.classList.remove('img-dark')
                 icon.classList.remove('icon-dark')
             }
-            if (icon_down.style.display === "none"){
-                list_3.addEventListener("mouseover", function () {
+
+                list_3.addEventListener("mouseover", function (){
                     sub_list_3.classList.add('show-sub-list-3')
                 })
                 list_3.addEventListener("mouseout", function () {
                     sub_list_3.classList.remove('show-sub-list-3')
                 })
+                sub_list_3.addEventListener("mouseover", function (){
+                sub_list_3.classList.add('show-sub-list-3')
+                })
+                sub_list_3.addEventListener("mouseout", function () {
+                sub_list_3.classList.remove('show-sub-list-3')
+                })
 
 
-           }else {
-                sidebar.classList.remove('list-3')
-
-            }
 
 
 
             check = false
         } else {
-            sidebar.classList.remove('list-3')
+            list_3.classList.remove('show-list-3')
+            // list_3.removeEventListener("mouseover", hover_new_side_bar,false)
+            // sidebar.classList.remove('list-3')
             icon_down.setAttribute("style", "display: block;")
             img_logo.classList.remove('img-dark')
             logo_svg.classList.remove('img-dark')

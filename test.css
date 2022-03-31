@@ -4,6 +4,9 @@
     position: relative;
     right: 8px;
 }
+.text-logo{
+    color: #1890ff;
+}
 .top{
     display: flex;
     position: relative;
@@ -20,13 +23,15 @@
     height: 102%;
     position: relative;
     bottom: 8px;
+    z-index: 1;
 }
 .content{
     display: flex;
     height: 803px;
-    width: 107%;
+    width: 105%;
 
 }
+
 .sub-menu{
     position: relative;
     left: 144px;
@@ -118,7 +123,27 @@ button{
 .sub-list-1{
     opacity: 0;
 }
-
+.list-3{
+    position: relative;
+    z-index: 0;
+    background-color: rgba(24, 144, 255, 0);
+    /*background-color: rgba(255, 255, 255, 0);*/
+    width: 5.5%;
+    height: 68px;
+    bottom: 593px;
+}
+.hover-list-3  li:hover{
+    color: #1890ff;
+}
+/*.darkmode-hover-list-3:hover{*/
+/*    color: white;*/
+/*}*/
+.darkmode-hover-list-3  li:hover{
+    color: white;
+}
+.show-list-3{
+    z-index: 2;
+}
 .show-sub-list{
     opacity: 1;
 }
@@ -207,13 +232,10 @@ input:checked + .slider:before {
 }
 /*Darkmode*/
 
-.darkmode {
-    background-color: black;
-    color: #ffffff8a;
-}
+
 .logodark{
     background-color: black;
-    width: 16.5%;
+    width: 16.2%;
     color: white;
 }
 .darkmode .item:hover{
@@ -346,7 +368,7 @@ input:checked + .slider:before {
     position: relative;
     top: 209px;
     display: none;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: 1px solid white;
     width: 166px;
     color: black;
@@ -354,21 +376,14 @@ input:checked + .slider:before {
 .show-sub-list-3{
     display: block;
 }
-.dark-sub-list-3{
-    background-color: black;
-    color: rgba(255, 255, 255, 0.66);
-}
-.dark-sub-list-3 ul li:hover{
-    color: white;
-}
+
+
 
 
 .black{}
 .emty{}
-.dark-sub-list-3 .black ul li:hover{
-    color: white;
-}
-/*dark*/
+
+
 .img-dark{
     left: 6px;
 }
@@ -382,15 +397,15 @@ input:checked + .slider:before {
     bottom: 60px;
     background-color: white;
 }
-/*hover */
+
 .hover-sub-list-3{
     opacity: 1;
 }
-/*.child:hover{*/
-/*    width: 173px;*/
-/*    position: relative;*/
-/*    left: 95px;*/
-/*    bottom: 60px;*/
-/*    background-color: black;*/
-/*    opacity: 1;*/
-/*}*/
+
+.darkmode {
+    background-color: black;
+    color: #ffffff8a;
+}
+.new-btn-toggle{
+    top: 372px;
+}
