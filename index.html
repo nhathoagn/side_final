@@ -62,7 +62,7 @@
                         </div>
                     </li>
 
-                    <div class="sub-list-1" >
+                    <div class="sub-list-1" id="remove-sub-list-1">
                         <ul>
                             <li class="new-list-1">
                                 <div class="sub-containor ">
@@ -189,6 +189,7 @@
     var list_3 = document.querySelector('.list-3')
     var emty = document.getElementById('emty')
     var btn_toogle = document.querySelector('.btn-toggle')
+    var remove_sub_list_1 = document.getElementById('remove-sub-list-1')
 
     emty.classList.remove("darkmode-hover-list-3")
     function dark_mode() {
@@ -269,6 +270,7 @@
 
     function new_side_bar() {
         if (list_3.className == 'list-3') {
+            remove_sub_list_1.remove('sub-list-1')
             list_3.classList.add('show-list-3')
             icon_down.setAttribute("style", "display: none;")
             text_logo.classList.add('newsb-text-logo')
@@ -319,8 +321,9 @@
 
 
 
-
+            check = false
         } else {
+
             list_3.classList.remove('show-list-3')
             // list_3.removeEventListener("mouseover", hover_new_side_bar,false)
             // sidebar.classList.remove('list-3')
@@ -351,7 +354,7 @@
             // sub_list_3.addEventListener("mouseover", newhover )
             // sub_list_3.addEventListener("mouseout",stop_newhover)
 
-
+            check = true
 
         }
 
