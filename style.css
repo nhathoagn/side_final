@@ -1,3 +1,9 @@
+body{
+    overflow: hidden;
+}
+ul{
+    list-style-type: none;
+}
 .container{
     height: 857px;
     width: 1778px;
@@ -28,10 +34,12 @@
 .content{
     display: flex;
     height: 803px;
-    width: 105%;
+    width: 108%;
 
 }
-
+.new-content{
+    width: 116%;
+}
 .sub-menu{
     position: relative;
     left: 144px;
@@ -83,9 +91,11 @@ button{
     padding-bottom: 10px;
 }
 .center{
+    display: flex;
     width: 88%;
     box-shadow: inset 20px 19px 20px 11px rgb(0 0 0 / 11%);
     height: 102%;
+
 }
 
 /*.side-bar{*/
@@ -128,17 +138,23 @@ button{
     z-index: 0;
     background-color: rgba(24, 144, 255, 0);
     /*background-color: rgba(255, 255, 255, 0);*/
-    width: 5.5%;
+    width: 6.5%;
     height: 68px;
     bottom: 593px;
 }
 .hover-list-3  li:hover{
     color: #1890ff;
 }
+.hover-list-4  li:hover{
+    color: #1890ff;
+}
 /*.darkmode-hover-list-3:hover{*/
 /*    color: white;*/
 /*}*/
 .darkmode-hover-list-3  li:hover{
+    color: white;
+}
+.darkmode-hover-list-4  li:hover{
     color: white;
 }
 .show-list-3{
@@ -228,7 +244,10 @@ input:checked + .slider:before {
 .btn-toggle{
     position: relative;
     left: 225px;
-    top: 437px;
+    top: 444px;
+}
+.new-btn-toggle{
+    top: 537px;
 }
 /*Darkmode*/
 
@@ -364,14 +383,31 @@ input:checked + .slider:before {
 .sl-new-list-4{
     list-style-type: none;
 }
-.sub-list-3{
+
+.sub-list-3 {
     position: relative;
     top: 209px;
     display: none;
     background-color: rgb(255, 255, 255);
-    border: 1px solid white;
+    border: 1px solid #eaeaea;
     width: 166px;
     color: black;
+    height: 117px;
+}
+
+.sub-list-4{
+    height: 117px;
+    position: relative;
+
+    top: 209px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #eaeaea;
+    width: 166px;
+    color: black;
+}
+.show-sub-list-4{
+    display: block;
 }
 .show-sub-list-3{
     display: block;
@@ -405,7 +441,4 @@ input:checked + .slider:before {
 .darkmode {
     background-color: black;
     color: #ffffff8a;
-}
-.new-btn-toggle{
-    top: 372px;
 }

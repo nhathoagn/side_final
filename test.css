@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .container{
     height: 857px;
     width: 1778px;
@@ -28,7 +31,7 @@
 .content{
     display: flex;
     height: 803px;
-    width: 105%;
+    width: 108%;
 
 }
 
@@ -87,7 +90,9 @@ button{
     box-shadow: inset 20px 19px 20px 11px rgb(0 0 0 / 11%);
     height: 102%;
 }
-
+.new-content{
+    width:116% ;
+}
 /*.side-bar{*/
 #icon-down{
     position: relative;
@@ -364,7 +369,16 @@ input:checked + .slider:before {
 .sl-new-list-4{
     list-style-type: none;
 }
-.sub-list-3{
+.sub-list-3  {
+    position: relative;
+    top: 209px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid white;
+    width: 166px;
+    color: black;
+}
+.sub-list-4{
     position: relative;
     top: 209px;
     display: none;

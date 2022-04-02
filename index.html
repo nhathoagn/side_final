@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -137,14 +137,14 @@
             <div class="sub-list-3">
                 <ul class="darkmode-hover-list-3 hover-list-3" id="emty">
                     <li class="sl-new-list-4">
-                        <div class="den-sub-li">
+                        <div class="black-sub-li" id="show-sub-list-4">
                             <span><span class="iconify" data-icon="ant-design:line-outlined"
                                         data-width="20"
                                         data-height="20"></span>&nbsp;Echart</span>
                         </div>
                     </li>
                     <li class="sl-new-list-4">
-                        <div class="den-sub-li">
+                        <div class="black-sub-li">
                                                              <span><span class="iconify"
                                                                          data-icon="ant-design:bar-chart-outlined"
                                                                          data-width="20"
@@ -152,7 +152,34 @@
                         </div>
                     </li>
                     <li class="sl-new-list-4">
-                        <div class="den-sub-li">
+                        <div class="black-sub-li">
+                                                               <span><span class="iconify"
+                                                                           data-icon="ant-design:area-chart-outlined"
+                                                                           data-width="20"
+                                                                           data-height="20"></span>&nbsp;Rechartst</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-list-4">
+                <ul class="darkmode-hover-list-4 hover-list-4" id="emty-2">
+                    <li class="sl-new-list-5">
+                        <div class="black-sub-li-2">
+                            <span><span class="iconify" data-icon="ant-design:line-outlined"
+                                        data-width="20"
+                                        data-height="20"></span>&nbsp;Echart</span>
+                        </div>
+                    </li>
+                    <li class="sl-new-list-5">
+                        <div class="black-sub-li-2">
+                                                             <span><span class="iconify"
+                                                                         data-icon="ant-design:bar-chart-outlined"
+                                                                         data-width="20"
+                                                                         data-height="20"></span>&nbsp;HighCharts</span>
+                        </div>
+                    </li>
+                    <li class="sl-new-list-5">
+                        <div class="black-sub-li-2">
                                                                <span><span class="iconify"
                                                                            data-icon="ant-design:area-chart-outlined"
                                                                            data-width="20"
@@ -167,31 +194,35 @@
 </div>
 <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 <script>
-    var darkmode = document.getElementById('btn-dark')
-    var side_bar = document.querySelector('.side-bar')
-    var logo = document.querySelector('.logo')
-    var sub_list_1 = document.querySelector('.sub-list-1')
-    var menu_level_3 = document.querySelector('.menu-level-3')
-    var new_list_2 = document.querySelector('.new-list-2')
-    var new_list_3 = document.querySelector('.new-list-3')
-    var sub_list_2 = document.querySelector('.sub-list-2')
-    var sub_list_3 = document.querySelector('.sub-list-3')
-    var list_item = document.getElementsByClassName('list-item')
-    var icon = document.querySelector('.icon')
-    var img_logo = document.querySelector('.img-logo')
-    var icon_sb = document.getElementsByClassName('icon_sb')
-    var text_logo = document.querySelector('.text-logo')
-    var text_menu = document.getElementsByClassName('text-menu')
-    var icon_down = document.getElementById('icon-down')
-    var hide_btn_toogle = document.querySelector('.btn-toggle')
-    var list = document.querySelector('.list')
-    var logo_svg = document.querySelector('.logo-svg')
-    var list_3 = document.querySelector('.list-3')
-    var emty = document.getElementById('emty')
-    var btn_toogle = document.querySelector('.btn-toggle')
-    var remove_sub_list_1 = document.getElementById('remove-sub-list-1')
-
+    const darkmode = document.getElementById('btn-dark')
+    const side_bar = document.querySelector('.side-bar')
+    const logo = document.querySelector('.logo')
+    const sub_list_1 = document.querySelector('.sub-list-1')
+    const menu_level_3 = document.querySelector('.menu-level-3')
+    const new_list_2 = document.querySelector('.new-list-2')
+    const new_list_3 = document.querySelector('.new-list-3')
+    const sub_list_2 = document.querySelector('.sub-list-2')
+    const sub_list_3 = document.querySelector('.sub-list-3')
+    const list_item = document.getElementsByClassName('list-item')
+    const icon = document.querySelector('.icon')
+    const img_logo = document.querySelector('.img-logo')
+    const icon_sb = document.getElementsByClassName('icon_sb')
+    const text_logo = document.querySelector('.text-logo')
+    const text_menu = document.getElementsByClassName('text-menu')
+    const icon_down = document.getElementById('icon-down')
+    const hide_btn_toogle = document.querySelector('.btn-toggle')
+    const list = document.querySelector('.list')
+    const logo_svg = document.querySelector('.logo-svg')
+    const list_3 = document.querySelector('.list-3')
+    const emty = document.getElementById('emty')
+    const btn_toogle = document.querySelector('.btn-toggle')
+    const remove_sub_list_1 = document.getElementById('remove-sub-list-1')
+    const content = document.querySelector('.content')
+    const show_sub_list_4 = document.getElementById('show-sub-list-4')
+    const sub_list_4 = document.querySelector('.sub-list-4')
+    const emty_2 = document.getElementById('emty-2')
     emty.classList.remove("darkmode-hover-list-3")
+    emty_2.classList.remove("darkmode-hover-list-4")
     function dark_mode() {
         if (darkmode.checked === true) {
             sub_list_3.classList.add('darkmode')
@@ -201,6 +232,8 @@
             logo.classList.add('logodark')
             emty.classList.add("darkmode-hover-list-3")
             emty.classList.remove('hover-list-3')
+            emty_2.classList.add("darkmode-hover-list-4")
+            emty_2.classList.remove('hover-list-4')
             // sub_list_3.classList.add('dark-sub-list-3')
             // den.classList.add('black')
             // logo.classList.add('logo-darkmode')
@@ -218,7 +251,7 @@
 
         } else {
             emty.classList.add("hover-list-3")
-
+            emty_2.classList.add('hover-list-4')
             sub_list_3.classList.remove('darkmode')
             // logo_svg.classList.remove('img-dark')
             // icon.classList.remove('icon-dark')
@@ -270,6 +303,7 @@
 
     function new_side_bar() {
         if (list_3.className == 'list-3') {
+            content.classList.add('new-content')
             remove_sub_list_1.remove('sub-list-1')
             list_3.classList.add('show-list-3')
             icon_down.setAttribute("style", "display: none;")
@@ -316,14 +350,26 @@
             sub_list_3.addEventListener("mouseout", function () {
                 sub_list_3.classList.remove('show-sub-list-3')
             })
-
-
+            show_sub_list_4.addEventListener("mouseover", function (){
+                sub_list_3.classList.add('show-sub-list-3')
+                sub_list_4.classList.add('show-sub-list-4')
+            })
+            show_sub_list_4.addEventListener("mouseout", function (){
+                sub_list_4.classList.remove('show-sub-list-4')
+            })
+            sub_list_4.addEventListener("mouseover", function (){
+                sub_list_3.classList.add('show-sub-list-3')
+                sub_list_4.classList.add('show-sub-list-4')
+            })
+            sub_list_4.addEventListener("mouseout", function (){
+                sub_list_4.classList.remove('show-sub-list-4')
+            })
 
 
 
             check = false
         } else {
-
+            content.classList.remove('new-content')
             list_3.classList.remove('show-list-3')
             // list_3.removeEventListener("mouseover", hover_new_side_bar,false)
             // sidebar.classList.remove('list-3')
@@ -333,6 +379,7 @@
             icon.classList.remove('icon-dark')
             icon.classList.remove('new-icon')
             list.classList.remove('new-list')
+            btn_toogle.classList.add('new-btn-toggle')
             text_logo.classList.remove('newsb-text-logo')
             img_logo.classList.remove('newsb-img-logo')
             side_bar.classList.remove('newsb-side-bar')
