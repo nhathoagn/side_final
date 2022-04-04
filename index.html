@@ -62,8 +62,8 @@
                         </div>
                     </li>
 
-                    <div class="sub-list-1" id="remove-sub-list-1">
-                        <ul>
+                    <div class="sub-list-1 show-sub-list-1" id="remove-sub-list-1">
+                        <ul class="show-sub-list-1"  >
                             <li class="new-list-1">
                                 <div class="sub-containor ">
                                     <div id="level-2">
@@ -221,6 +221,7 @@
     const show_sub_list_4 = document.getElementById('show-sub-list-4')
     const sub_list_4 = document.querySelector('.sub-list-4')
     const emty_2 = document.getElementById('emty-2')
+    const show_sub_list_1 = document.querySelector('.show-sub-list-1')
     emty.classList.remove("darkmode-hover-list-3")
     emty_2.classList.remove("darkmode-hover-list-4")
     function dark_mode() {
@@ -285,6 +286,7 @@
 
     function show_hide_ml_3() {
         new_list_2.classList.toggle('ml-3-new-list-2')
+        btn_toogle.classList.toggle('dark-btn-toogle')
         btn_toogle.classList.toggle('new-btn-toggle')
         new_list_3.classList.toggle('ml-3-new-list-3')
         sub_list_2.classList.toggle('ml-3-sub-list-2')
@@ -304,7 +306,8 @@
     function new_side_bar() {
         if (list_3.className == 'list-3') {
             content.classList.add('new-content')
-            remove_sub_list_1.remove('sub-list-1')
+            show_sub_list_1.style.display = "none"
+            // remove_sub_list_1.remove('hide-side-bar')
             list_3.classList.add('show-list-3')
             icon_down.setAttribute("style", "display: none;")
             text_logo.classList.add('newsb-text-logo')
@@ -369,6 +372,7 @@
 
             check = false
         } else {
+            show_sub_list_1.style.display = ""
             content.classList.remove('new-content')
             list_3.classList.remove('show-list-3')
             // list_3.removeEventListener("mouseover", hover_new_side_bar,false)

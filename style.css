@@ -247,21 +247,21 @@ input:checked + .slider:before {
     top: 444px;
 }
 .new-btn-toggle{
-    top: 537px;
+    top: 457px;
 }
 /*Darkmode*/
 
 
 .logodark{
     background-color: black;
-    width: 16.2%;
+    width: 16.6%;
     color: white;
 }
 .darkmode .item:hover{
     color: white;
 }
 .logo-darkmode{
-    width: 5.4%;
+    width: 5.8%;
     height: 50px;
 }
 .logo-img-darkmode{
@@ -441,4 +441,7 @@ input:checked + .slider:before {
 .darkmode {
     background-color: black;
     color: #ffffff8a;
+}
+.dark-btn-toogle{
+    top: 373px;
 }
